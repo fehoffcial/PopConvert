@@ -16,7 +16,7 @@
     # 4-) Exercio:
         # Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
         # Output: [8,9,9,9,0,0,0,1]
-# Resultado:
+# Resultados:
     x = int(input("Digite o valor de l1: ")) #* O Valor de l1 para depois fazer a soma com l2
     y = int(input("Digite o valor de l2: ")) 
     xy = x+y #*  A Soma de x e y
