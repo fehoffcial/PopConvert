@@ -20,7 +20,7 @@
 import time,random # Importar a biblioteca Time e Random
 times_now = time.time() # Tempo Inicial dos Programa
 db_dict = {} # Dicionário para armazenar todos os valores exemplo: Número da Function ,Random e Time.
-db_dict_all = {} # Dicionário para armazenar todos os tipos de valores exemplo: Número da Function ,Random e Time.
+db_dict_all = dict() # Dicionário para armazenar todos os tipos de valores exemplo: Número da Function ,Random e Time.
 function_number = 0 # Número da Function.
 init_random = 0 # Número da Function init_random.
 while True: # Ativando o Loop.
@@ -30,15 +30,18 @@ while True: # Ativando o Loop.
         function_number = function_number + 1 # A function_number Number será salva na função db_dict.
         times = time_function - times_now # Timer é feita para calcular quantos milissegundos demorou para ser verdadeiro.
         db_dict[f"f{function_number}"] = [f"[ RANDOM ] {number_random}",f"[ MS ] {str(times)[4:]}"] # Esta função db_dict salva todos os valores que são verdadeiros.
-        if (99==len(db_dict.keys())): # Após você verifica quantas foi Keys no db_dict, se for até 99 Keys.
+        if 99==len(db_dict.keys()): # Após você verifica quantas foi Keys no db_dict, se for até 99 Keys.
             print(f"Quantas vez que foi preciso para fechar o [ Loop ] {len(db_dict_all.keys())} || Quantos Tempo que Demorou [ S ] {times_now}") # Mostra quantas vez foi preciso para fechar o Loop.
             user = input("Gostaria de exibir os valores db_dict [ Y ] ou [ N ]:")
             if user.upper()=="Y":
+                print(db_dict)
                 for functions in db_dict.items():
-                    init_random+=1
+                    init_random = init_random + 1
                     print(functions)
+                    print(init_random)
                     if init_random==99:
                         break # Finalizar o Loop
+                break # Finalizar o Loop
     else:
         function_number = function_number + 1  # A function_number Number será salva na função db_dict_all.
         times = time_function - times_now  # Timer é feita para calcular quantos milissegundos demorou para ser verdadeiro.
